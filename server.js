@@ -3,6 +3,8 @@ const http = require('http');
 const socketIo = require('socket.io');
 const cors = require('cors');
 
+const port = 8000
+
 const app = express();
 const server = http.createServer(app);
 const io = socketIo(server);
@@ -29,6 +31,6 @@ io.on('connection', (socket) => {
   });
 });
 
-server.listen(80, () => {
-  console.log('Server is running on http://localhost:3000');
+server.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
 });
